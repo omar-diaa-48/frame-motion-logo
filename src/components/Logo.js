@@ -15,7 +15,7 @@ const svgVariants = {
 	}
 }
 
-const pathVariants = {
+const pathOneVariants = {
 	initial: {
 		opacity: 0,
 		pathLength: 0
@@ -25,6 +25,22 @@ const pathVariants = {
 		pathLength: 1,
 		transition: {
 			duration: 2,
+			ease: 'easeInOut'
+		}
+	}
+}
+
+const pathTwoVariants = {
+	initial: {
+		opacity: 1,
+		pathLength: 1
+	},
+	animate: {
+		opacity: 0,
+		pathLength: 0,
+		transition: {
+			duration: 2,
+			delay: 2,
 			ease: 'easeInOut'
 		}
 	}
@@ -43,11 +59,12 @@ export default function Logo() {
 					animate="animate"
 					exit="exit"
 				>
-					<motion.g fill-rule="evenodd" clip-rule="evenodd"><path fill="#fff" d="M0 0h192.755v192.756H0V0z"
-						variants={pathVariants}
-					/>
+					<motion.g fill-rule="evenodd" clip-rule="evenodd">
+						<motion.path fill="#fff" d="M0 0h192.755v192.756H0V0z"
+							variants={pathOneVariants}
+						/>
 						<motion.path d="M127.986 70.51v7.505l-63.217 28.846v-7.743l54.357-24.873L64.769 49.4v-7.744l63.217 28.854zM64.769 122.25v-7.495l63.217-28.852v7.74L73.654 118.5l54.332 24.859v7.741l-63.217-28.85z"
-							variants={pathVariants}
+							variants={pathTwoVariants}
 						/>
 					</motion.g>
 				</motion.svg>

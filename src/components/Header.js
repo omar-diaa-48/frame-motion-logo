@@ -7,7 +7,7 @@ export default function Header() {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsVisible(false)
-		}, 3000);
+		}, 4000);
 	}, [])
 
 	return (
